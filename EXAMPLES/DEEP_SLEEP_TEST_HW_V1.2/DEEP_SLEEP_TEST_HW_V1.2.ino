@@ -45,6 +45,7 @@ void setup() {
   Serial.println("Going to seelp in:");
   for(int i = 5; i > 0; i--){
     Serial.println(String(i) + " seg");
+    delay(1000);
   }
   
 
@@ -53,7 +54,7 @@ void setup() {
   int cont = 1;
   while(digitalRead(VINSW_EN_PIN) != 0 || digitalRead(VGNSS_NOT_EN_PIN) != 1 || digitalRead(VSPI_NOT_EN_PIN) != 1)
   {
-    Serial.print("Try No." + String(cont));
+    Serial.println("Try No." + String(cont));
     cont++;
     digitalWrite(VINSW_EN_PIN,LOW);  // Vin OFF
     pinMode(VGNSS_NOT_EN_PIN,INPUT_PULLUP);   // VGNSS OFF
@@ -62,7 +63,6 @@ void setup() {
   }
   Serial.println("Done.");
   Serial.println("Going to sleep for " + String(TIME_TO_SLEEP) + " sec.");
-  Serial.println("Bye!.. zzzz");
   Serial.flush();      // wait UART finish any TX before sleep
   gpio_hold_en((gpio_num_t)VINSW_EN_PIN);     //GPIO5 must be on hold during sleep mode
   gpio_deep_sleep_hold_en();    // enable pin state hold
