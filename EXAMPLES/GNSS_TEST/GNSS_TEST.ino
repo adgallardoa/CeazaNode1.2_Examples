@@ -52,22 +52,22 @@ void loop() {
       if(extractNMEAData(data, dataArray, dataCount))
       {
 
-        Serial.println("\n*****************");
-        Serial.println("GNSS UPDATED DATA");
-        Serial.println("*****************\n");
+        
        
         if(dataArray[0] == "GPTXT"){
           Serial.print("- GNSS antenna: ");
           if(fields[4] == "ANTENNA OK"){
-            Serial.println("OK");
+            Serial.println("OK\n");
           }else if(fields[4] == "ANTENNA OPEN"){
-            Serial.println("OPEN");
+            Serial.println("OPEN\n");
           }else if(fields[4] == "ANTENNA SHORT"){
-            Serial.println("SHORTED");
+            Serial.println("SHORTED\n");
+          }else{
+            Serial.println("COM. ERROR\n");
           }
           
         }else if(dataArray[0] == "GNGGA"){
-          Serial.print("GPS status: ");
+          Serial.print("- GPS status: ");
           if(dataArray[0] == "1"){
             Serial.println("Fixed");
           }else{
