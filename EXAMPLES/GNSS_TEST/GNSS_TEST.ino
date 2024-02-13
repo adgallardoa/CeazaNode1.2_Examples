@@ -67,12 +67,26 @@ void loop() {
           }
           
         }else if(dataArray[0] == "GNGGA"){
+          Serial.print("- UTC time: ");
+          Serial.println(dataArray[1]);
           Serial.print("- GPS status: ");
-          if(dataArray[0] == "1"){
-            Serial.println("Fixed");
+          if(dataArray[6] == "0"){
+            Serial.println("not positioned");
+          }else if(dataArray[6] == "1"){
+            Serial.println("single point positioning");
+          }else if(dataArray[6] == "2"){
+            Serial.println("differential GPS fixed solution");
+          }else if(dataArray[6] == "4"){
+            Serial.println("RTK Fixed");
+          }else if(dataArray[6] == "5"){
+            Serial.println("floating point solution");
+          }else if(dataArray[6] == "6"){
+            Serial.println("INS Dead reckoning");
           }else{
-            Serial.println("No fix");
-          }
+            Serial.println("Not valid value! \"" + String(dataArray[6]) + '\"');
+          } //INS Dead reckoning
+          Serial.print("- Satellites used: ");
+          Serial.println(dataArray[7]);
         }
       }
 
