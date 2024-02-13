@@ -30,14 +30,14 @@ void loop() {
   float pcbTemp;
   
   pcbTemp = getPcbTemp();
-  Serial.print("PCB Temp: " + String(pcbTemp) + " *C");
+  Serial.println("PCB Temp: " + String(pcbTemp) + " *C");
 
   delay(100);
 }
 
 float getPcbTemp(void){
   digitalWrite(V_SPI_EN_PIN, LOW);
-  delay(100);
+  delay(1000);
 
   const float rAux  = 10000;
   const float vcc   = 3.3;
