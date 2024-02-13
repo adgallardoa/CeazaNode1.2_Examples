@@ -14,12 +14,8 @@ void setup() {
 
 void loop() {
   
-  Serial.println(String (cont) + ", SWVIN: " + String(digitalRead(SWVIN_CTRL_PIN)));
-
-  if(SWVIN_CTRL_PIN){
-    pinMode(SWVIN_CTRL_PIN, )
-  }
   digitalWrite(SWVIN_CTRL_PIN, !digitalRead(SWVIN_CTRL_PIN));
+  Serial.println(String (cont) + ", SWVIN: " + String(digitalRead(SWVIN_CTRL_PIN)));
   
   cont ++;
   delay(5000);
