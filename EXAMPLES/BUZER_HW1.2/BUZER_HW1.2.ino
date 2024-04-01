@@ -22,8 +22,8 @@ void setup() {
   // define pin modes and initial status of each one
   pinMode(BUZZER_EN_PIN,OUTPUT);digitalWrite(BUZZER_EN_PIN,LOW);    // define buzzer controller pin with initia stats off.
 
-  // sound routine. on this case, it sounds 5 times
-  for(int i = 0; i < 10; i++){
+  // sound routine. on this case, it sounds 2 times
+  for(int i = 0; i < 4; i++){
     digitalWrite(BUZZER_EN_PIN, !digitalRead(BUZZER_EN_PIN)); // the buzzer will sound while BUZZER_EN_PIN have a high level output 
     delay(100);
   }
