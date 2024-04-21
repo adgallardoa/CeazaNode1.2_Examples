@@ -2,7 +2,7 @@
  * FLASH DUMP TEST
  * 
  * This code shows how to retrive data at low level from datalogger's flash memory.
- * HW Version: 1.2
+ * Node HW Version: 1.2
  * microcontroller: ESP32-WROOM-32E or "ESP32 Dev Module"
  * Flash memory: Windbond W25N01GVZEIG TR
  * You can use and modify this code under your own responsibility.
