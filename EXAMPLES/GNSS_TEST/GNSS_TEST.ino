@@ -100,7 +100,7 @@ void loop() {
 
 
 //=================================================================================================
-//  READ SWARM MODULE MESSAGES
+//  READ NMEA MESSAGES
 //=================================================================================================
 String readNMEASerialData()
 {
@@ -129,7 +129,7 @@ String readNMEASerialData()
 
 
 //=================================================================================================
-//  GET MESSAGE FROM INCOMMING NMEA MODULE RESPONSE AND VALIDATE IT'S INTEGRITY
+//  GET DATA FROM NMEA MESSAGES
 //=================================================================================================
 bool extractNMEAData(String response, String* dataArray, int dataCount)
 {
